@@ -1,0 +1,2 @@
+class Pantheon < ApplicationRecord
+end
