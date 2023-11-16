@@ -3,6 +3,7 @@
 <table class="table-auto">
   <thead>
     <tr>
+      <th></th>
       <th>Mythology</th>
       <th>Description</th>
     </tr>
@@ -10,9 +11,13 @@
   <tbody>
     <% @mythologies.each do |m| %>
       <tr>
-        <td><%= m.name %></td>
+        <td><%= m.id.to_s + '. ' + m.name %></td>
         <td><%= m.description %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<br>
+<div>
+  <a href="/stories/new">Generate a story</a>
+</div>
