@@ -69,3 +69,4 @@ end
 gem "tailwindcss-rails", "~> 2.0"
 gem "langchainrb"
 gem "ruby-openai", "~> 6.1.0"
+gem "rack-timeout"
