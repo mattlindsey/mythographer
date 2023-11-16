@@ -27,8 +27,8 @@ class StoriesController < ApplicationController
     @story.body = "Generating..."
 
     if @story.save
-      prompt = Langchain::Prompt::PromptTemplate.new(template: "Tell me a very short story from {mythology} mythology.", input_variables: ["mythology"])
-      prompt_text = prompt.format(mythology: m)
+      prompt = Langchain::Prompt::PromptTemplate.new(template: "Tell me a very short story from {mythology} mythology that would be appropriately titled {title}.", input_variables: ["mythology", "title"])
+      prompt_text = prompt.format(mythology: m, title: @story.title)
       @story.body = llm.complete(prompt: prompt_text).completion
       @story.save
 
