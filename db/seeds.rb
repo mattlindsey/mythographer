@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-["Greek", "Roman", "Norse"].each do |mythology_name|
+["Greek", "Roman", "Norse", "Unspecified"].each do |mythology_name|
   Mythology.find_or_create_by!(name: mythology_name)
 end
 

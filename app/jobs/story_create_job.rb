@@ -10,7 +10,7 @@ class StoryCreateJob < ApplicationJob
     prompt = Langchain::Prompt::PromptTemplate.new(template: "Tell me a very short story from {mythology_name} mythology that would be appropriately titled {title}.", input_variables: ["mythology_name", "title"])
     prompt_text = prompt.format(mythology_name: mythology_name, title: story.title)
     story.body = llm.complete(prompt: prompt_text).completion
-    
+
     story.save
   end
 end

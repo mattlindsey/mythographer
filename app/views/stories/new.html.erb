@@ -1,5 +1,4 @@
 <h1>New Story</h1>
-
 <%= form_with model: @story do |form| %>
   <% if form.object.errors.any? %>
     <div id="error_explanation">
@@ -13,7 +12,7 @@
   <% end %>
   <div>
     <%= form.label :mythology_id %>
-    <%= form.select :mythology_id, [1, 2, 3] %>
+    <%= form.select :mythology_id, [1, 2, 3, 4] %>
     <%= form.label :title %>
     <%= form.text_field :title %>
     <%= form.text_area :body, placeholder: 'AI will generate this', style: 'display:none' %>

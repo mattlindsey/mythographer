@@ -1,2 +1,8 @@
+<%= turbo_stream_from "stories" %>
 <h1><%= @story.title %></h1>
-<%= @story.body %>
+<div id="<%= dom_id(@story) %>">
+  <%= @story.body %>
+</div>
+<%= button_to "Delete",
+              story_path(@story),
+              method: :delete %>
