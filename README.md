@@ -20,8 +20,8 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to develop
-  - Run using bin/dev
+* How to develop: 
+  - [Project Setup](https://github.com/mattlindsey/mythographer/blob/main/PROJECT_SETUP.md)
 
 * How to run the test suite
 
