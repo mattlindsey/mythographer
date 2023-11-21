@@ -2,11 +2,11 @@
 
 These are the steps for setting up your development environment.
 
-## Step 1: Get your own local copy of the project to work on
+### Step 1: Get your own local copy of the project to work on
 
-You'll do your development work on your own copy of the project, so hit the 'clone' button.
+You'll do your development work on your own forked copy of the project, so hit the 'clone' button in github.
 
-### Keeping a fork up to date
+#### Keeping a fork up to date
 
 1. Clone your fork:
 
@@ -52,7 +52,7 @@ bin/rails db:seed
 Now you're ready to run the tests:
 
 ```bash
-bin/rails test:system
+bin/rails test:all
 ```
 
 ### Step 5: Set your OpenAI key
@@ -61,15 +61,22 @@ bin/rails test:system
 export OPENAI_API_KEY=sk-key
 ```
 
-
 ### Step 6. Start the server
 
 ```bash
-redis-server --daemonize yes
 bin/rails dev
 ```
 
-You can now see the system working on [Mythographer](http://localhost:3000)
+You can now see the system working [locally](http://localhost:3000)
+
+####
+
+If you get an error concerning Turbo or Redis, you may need to do
+```bash
+bin/rails turbo:install
+bin/rails turbo:install:redis
+redis-server --daemonize yes
+```
 
 ## Code Style
 
