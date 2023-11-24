@@ -8,7 +8,7 @@ status:
 	docker-compose ps
 
 setup:
-	docker-compose down --remove-orphans && docker system prune && docker-compose run website bundle install && docker-compose build && docker-compose up -d 
+	docker-compose down --remove-orphans && docker system prune && docker-compose run app bundle install && docker-compose build && docker-compose up -d 
 
 migrate: 
 	docker-compose \
