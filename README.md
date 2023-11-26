@@ -1,7 +1,7 @@
 # Mythographer README
 
 ![Tests status](https://github.com/mattlindsey/mythographer/actions/workflows/ci.yml/badge.svg?branch=main)
-[![License](https://img.shields.io/badge/license-GNU-green.svg)](https://github.com/mattlindsey/mythographer/blob/main/LICENSE.txt)
+[![License](https://img.shields.io/badge/license-GNU-green.svg)](https://github.com/mattlindsey/mythographer/blob/main/LICENSE)
 
 Creative design and generation of myths.
 
