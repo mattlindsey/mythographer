@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_16_144713) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "mythology_id", null: false
+    t.bigint "mythology_id", null: false, default: 1
     t.index ["mythology_id"], name: "index_stories_on_mythology_id"
   end
 

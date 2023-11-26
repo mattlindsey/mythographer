@@ -80,4 +80,9 @@ redis-server --daemonize yes
 
 ## Code Style
 
+Before committing your code, ensure that it follows ruby and rails style standards
+```bash
+bundle exec rubocop -A
+```
+
 We recommend and follow the [Ruby Style Guide](https://github.com/rubocop-hq/ruby-style-guide)
