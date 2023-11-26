@@ -1,6 +1,5 @@
 class MythologiesController < ApplicationController
-  def index 
+  def index
     @mythologies = Mythology.all
   end
-
 end
