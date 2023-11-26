@@ -10,9 +10,11 @@
       </ul>
     </div>
   <% end %>
+
+  <%# To Do: consider switching to simple form %>
   <div>
     <%= form.label :mythology_id %>
-    <%= form.select :mythology_id, [1, 2, 3, 4] %>
+    <%= form.select :mythology_id, @mythologies.map { |mythology| [mythology.name, mythology.id] } %>
     <%= form.label :title %>
     <%= form.text_field :title %>
     <%= form.text_area :body, placeholder: 'AI will generate this', style: 'display:none' %>
