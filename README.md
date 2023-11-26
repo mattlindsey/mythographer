@@ -1,5 +1,8 @@
 # Mythographer README
 
+![Tests status](https://github.com/mattlindsey/mythographer/actions/workflows/ci.yml/badge.svg?branch=main)
+[![License](https://img.shields.io/badge/license-GNU-green.svg)](https://github.com/mattlindsey/mythographer/blob/main/LICENSE.txt)
+
 Creative design and generation of myths.
 
 This app will allow anyone to create unique stories and "worlds" based on elements from existing mythologies.
