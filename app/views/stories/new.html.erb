@@ -1,23 +1,23 @@
 <h1>New Story</h1>
-<%= form_with model: @story do |form| %>
-  <% if form.object.errors.any? %>
+<%= simple_form_for @story do |f| %>
+  <% if f.object.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(form.object.errors.count, "error") %> prohibited this story from being saved:</h2>
+      <h2><%= pluralize(f.object.errors.count, "error") %> prohibited this story from being saved:</h2>
       <ul>
-        <% form.object.errors.full_messages.each do |msg| %>
+        <% f.object.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
-  <%# To Do: consider switching to simple form %>
   <div>
-    <%= form.label :mythology_id %>
-    <%= form.select :mythology_id, @mythologies.map { |mythology| [mythology.name, mythology.id] } %>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-    <%= form.text_area :body, placeholder: 'AI will generate this', style: 'display:none' %>
+    <%= f.input :mythology_id, collection: @mythologies, label_method: :name, value_method: :id,
+    label_html: { style: 'margin-right: 15px;' },
+    input_html: { style: 'margin-bottom: 15px' } %>
+    <%= f.input :title, label_html: { style: 'margin-right: 49px;' } %>
+    <%= f.hidden_field :body, input_placeholder: 'AI will generate this' %>
+    <div style="margin-top: 20px;">
+      <%= f.submit class: 'border font-bold py-2 px-4 rounded', style: 'display: block;' %>
+    </div>
   </div>
-  <%= form.button class: 'border font-bold py-2 px-4 rounded' %>
 <% end %>
