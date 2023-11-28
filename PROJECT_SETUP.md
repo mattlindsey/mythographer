@@ -1,6 +1,6 @@
 # Setting Up for Development
 
-These are the steps for setting up your development environment.
+These are the steps for setting up your development environment locally or using Docker.
 
 ### Step 1: Get your own local copy of the project to work on
 
@@ -27,6 +27,8 @@ You'll do your development work on your own forked copy of the project, so hit t
    ```bash
    git pull upstream main
    ```
+
+4. If you want to use Docker, skip the following steps and jump right to [Docker Installation.](#docker-installation)
 
 ### Step 2: Install the gems with `bundle install`
 
@@ -86,3 +88,41 @@ bundle exec rubocop -A
 ```
 
 We recommend and follow the [Ruby Style Guide](https://github.com/rubocop-hq/ruby-style-guide)
+
+# Docker installation (optional):
+
+- Make sure you have docker installed on your machine in order to run this app using docker.
+
+## Steps are necessary to get the application up and running with docker.
+
+### Setup the application from scratch
+
+    make setup
+
+### Start the application in a docker container.
+
+    make up
+
+### Stop the application running in the docker container.
+
+    make down
+
+### Show the status of the containers running the application (Helpful for troubleshooting docker containers).
+
+    make status
+
+### Migrate the database.
+
+    make migrate
+
+### Show rails routes.
+
+    make routes
+
+### Start rails console in container.
+
+    make console
+
+### Run bundle (executes make down && make up commands)
+
+    make bundle
