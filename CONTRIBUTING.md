@@ -7,17 +7,18 @@ email, or any other method with the owners/maintainers of this repository before
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
-Please do come and say hello in our [Slack chat](https://agileventures.slack.com/messages/mythographer).
+Please do come and say hello in our [Slack chat](https://agileventures.slack.com/messages/mythographer),
+which you can join by signing up at [Agile Ventures](https://www.agileventures.org/)
 
 ## Pull Request Process
 
 1. Each developer should work with a [fork](https://help.github.com/articles/fork-a-repo/).
-2. [install on your dev environment (locally)](https://github.com/mattlindsey/mythographer#app-development).
+2. [install on your dev environment](https://github.com/mattlindsey/mythographer/blob/main/CONTRIBUTING.md).
 3. Before starting work on a new feature or bugfix, please ensure you have [synced your fork to upstream](https://help.github.com/articles/syncing-a-fork/)
 4. Create a branch on your fork and make your updates.
 5. Ensure any install or build dependencies are removed before the end of the layer when doing a
    build.
-6. Update the README.md with details of changes to the interface, this includes new environment
+6. Update the PROJECT_SETUP.md with details of changes to the interface, this includes new environment
    variables, exposed ports, useful file locations and container parameters.
 7. Submit a PR and indicate that it is ready for review and a maintainer will merge it when it is complete.
 
