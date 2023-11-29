@@ -27,6 +27,7 @@ class StoriesController < ApplicationController
       StoryCreateJob.perform_later(@story.id)
       redirect_to @story
     else
+      @mythologies = Mythology.all # Set @mythologies again so that the form can be re-rendered properly
       render :new, status: :unprocessable_entity
     end
   end
