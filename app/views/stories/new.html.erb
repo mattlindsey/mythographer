@@ -12,13 +12,10 @@
   <% end %>
   <div>
     <%= f.input :mythology_id, collection: @mythologies, label_method: :name, value_method: :id,
-    label_html: { style: 'margin-right: 15px;' },
-    input_html: { style: 'margin-bottom: 15px', class: 'rounded' } %>
-    <%= f.input :title, label_html: { style: 'margin-right: 49px;' },
-    input_html: { class: 'rounded' } %>
+    input_html: { class: 'rounded', style: 'margin-left: 15px;' } %>
+    <%= f.input :title,
+    input_html: { class: 'rounded mt-5', style: 'margin-left: 49px;' } %>
     <%= f.hidden_field :body, input_placeholder: 'AI will generate this' %>
-    <div style="margin-top: 20px;">
-      <%= f.submit class: 'border font-bold py-2 px-4 rounded', style: 'display: block;' %>
-    </div>
+    <%= f.submit class: 'border font-bold py-2 px-4 rounded block mt-5' %>
   </div>
 <% end %>
