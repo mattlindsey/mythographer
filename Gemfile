@@ -55,6 +55,8 @@ group :development, :test do
   gem "bundler-audit", require: false
   gem "brakeman", require: false
   gem "standard", require: false
+  gem "rspec-rails"
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -78,3 +80,4 @@ gem "tailwindcss-rails", "~> 2.0"
 gem "langchainrb"
 gem "ruby-openai", "~> 6.1.0"
 gem "rack-timeout"
+gem 'google_palm_api'

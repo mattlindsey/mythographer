@@ -24,7 +24,7 @@ class StoriesController < ApplicationController
     @story.body = "Generating. Story should appear here. Wait a bit..."
 
     if @story.save
-      StoryCreateJob.perform_later(@story.id)
+      StoryCreateJob.perform_later(@story.id, llm_platform)
       redirect_to @story
     else
       @mythologies = Mythology.all # Set @mythologies again so that the form can be re-rendered properly
