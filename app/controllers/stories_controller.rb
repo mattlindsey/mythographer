@@ -52,6 +52,6 @@ class StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:title, :mythology_id, :body)
+    params.require(:story).permit(:title, :mythology_id, :body, :creativity)
   end
 end

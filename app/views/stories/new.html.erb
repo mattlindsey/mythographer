@@ -12,9 +12,13 @@
   <% end %>
   <div>
     <%= f.input :mythology_id, collection: @mythologies, label_method: :name, value_method: :id,
+    default: @mythologies.first,
     input_html: { class: 'rounded', style: 'margin-left: 15px;' } %>
     <%= f.input :title,
     input_html: { class: 'rounded mt-5', style: 'margin-left: 49px;' } %>
+    <%= f.input :creativity, collection: %w[Conservative Balanced Inventive],
+    default: 'Conservative',
+    input_html: { class: 'rounded mt-5', style: 'margin-left: 10px;' } %>
     <%= f.hidden_field :body, input_placeholder: 'AI will generate this' %>
     <%= f.submit class: 'border font-bold py-2 px-4 rounded block mt-5' %>
   </div>
