@@ -14,5 +14,11 @@ class Story < ApplicationRecord
     CREATIVITY_TEMPS[creativity]
   end
 
-  after_update -> { broadcast_replace_to "stories" }
+  after_update -> {
+    begin
+      broadcast_replace_to "stories"
+    rescue => e
+      logger.error "Error occurred during broadcast_replace_to: #{e.message}"
+    end
+  }
 end
