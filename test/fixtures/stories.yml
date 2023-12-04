@@ -4,8 +4,10 @@ one:
   title: First Story
   body: This is the first story.
   mythology: one
+  creativity: Balanced
 
 two:
   title: Second Story
   body: This is the second story.
   mythology: two
+  creativity: Inventive
