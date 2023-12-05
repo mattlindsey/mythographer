@@ -7,7 +7,7 @@ FactoryBot.define do
   factory(:story) do
     title { "Sample Title" }
     body { "Sample Body" }
-    mythology_id { FactoryBot.create(:mythology).id }
+    association :mythology
     creativity { "Balanced" }
   end
 end
