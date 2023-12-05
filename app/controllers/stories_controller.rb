@@ -24,11 +24,11 @@ class StoriesController < ApplicationController
     @story.body = "Generating. Story should appear here. Wait a bit..."
 
     if @story.save
-      llm_name = 'google' # TODO: get llm_name from params
+      llm_name = "google" # TODO: get llm_name from params
       StoryCreateJob.perform_later(@story.id, llm_name)
       redirect_to @story
     else
-      @mythologies = Mythology.all # Set @mythologies again so that the form can be re-rendered properly
+      @mythologies = Mythology.all
       render :new, status: :unprocessable_entity
     end
   end

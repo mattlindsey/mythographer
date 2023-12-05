@@ -52,6 +52,8 @@ group :development, :test do
   gem "debug", platforms: %i[mri windows]
   gem "rubocop-rails", require: false
   gem "rubocop-capybara", require: false
+  gem "rubocop-rspec", require: false
+  gem "rubocop-factory_bot", require: false
   gem "bundler-audit", require: false
   gem "brakeman", require: false
   gem "standard", require: false
