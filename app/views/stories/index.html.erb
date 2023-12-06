@@ -1,7 +1,12 @@
 <h1>Story List</h1>
-<% @stories.each do |story| %>
-  <p><%= story.title %></p>
-<% end %>
-<div>
-  <a href="/stories/new">New Story</a>
-</div>
+<ol class="list-decimal space-y-4 list-inside">
+  <% @stories.each do |story| %>
+    <li>
+      <%= link_to story.title, story %>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full">
+        <%= story.mythology.name %>
+      </button>
+    </li>
+  <% end %>
+</ol>
+<%= link_to "New Story", new_story_path, class: "px-4 py-4 bg-green-500 hover:bg-green-700 rounded" %>
