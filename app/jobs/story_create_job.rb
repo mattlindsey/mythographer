@@ -10,7 +10,7 @@ class StoryCreateJob < ApplicationJob
     when "openai"
       llm = Langchain::LLM::OpenAI.new(api_key: ENV["OPENAI_API_KEY"], llm_options: {temperature: story.creativity_temp})
     when "google"
-      llm = Langchain::LLM::GooglePalm.new(api_key: ENV["GOOGLE_PALM_API_KEY"]) # TODO: llm_options: {temperature: story.creativity_temp})
+      llm = Langchain::LLM::GooglePalm.new(api_key: ENV["GOOGLE_PALM_API_KEY"], default_options: {temperature: story.creativity_temp})
     else
       logger.error "Unknown LLM: #{llm_name}"
     end
