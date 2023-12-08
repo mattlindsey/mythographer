@@ -2,6 +2,7 @@ class Story < ApplicationRecord
   belongs_to :mythology
   validates :title, presence: true
   validates :body, presence: true
+  has_many :gods, through: story_gods
 
   CREATIVITY_TEMPS = {
     "Conservative" => 0.2,
