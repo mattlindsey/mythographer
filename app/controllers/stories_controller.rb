@@ -24,7 +24,7 @@ class StoriesController < ApplicationController
     @story.body = "Generating. Story should appear here. Wait a bit..."
 
     if @story.save
-      llm_name = "google" # TODO: get llm_name from params
+      llm_name = LLM_DEFAULTS[:llm] # TODO: get llm_name from params
       StoryCreateJob.perform_later(@story.id, llm_name)
       redirect_to @story
     else
