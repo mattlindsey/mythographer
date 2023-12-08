@@ -1,6 +1,8 @@
 require:
   - rubocop-rails
   - rubocop-capybara
+  - rubocop-rspec
+  - rubocop-factory_bot
 inherit_gem:
   standard: config/base.yml
 AllCops:
@@ -17,3 +19,5 @@ Rails/I18nLocaleTexts:
   Enabled: false # disable this cop because not using locales for now
 Bundler/DuplicatedGem:
   Enabled: false # ignore duplicated gem errors because we will have duplicated gems when dual booting
+RSpec/ExampleLength:
+  Max: 19
