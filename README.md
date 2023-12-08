@@ -8,13 +8,11 @@ Creative design and generation of myths using artificial intelligence.
 This app will allow anyone to create unique stories and "worlds" based on elements from existing mythologies.
 After selecting the desired elements (like gods, heroes, cultures, geography) a story will be created using artificial intellegence. Additional features could include generation of images, memes, or items of "lore."
 
-
 # Contributing
 
 See [CONTRIBUTING.md](https://github.com/mattlindsey/mythographer/blob/main/CONTRIBUTING.md).
 
 Working with this project is a good way to learn Ruby on Rails and AI LLMs (Large Language Models)!
-
 
 # Setting Up for Development
 
@@ -46,7 +44,7 @@ You'll do your development work on your own forked copy of the project, so hit t
    git pull upstream main
    ```
 
-4. If you want to use Docker, skip the following steps and jump right to [Docker Installation.](#docker-installation)
+4. If you want to use Docker, skip the following steps and jump right to [Docker Installation.](#docker-installation-optional)
 
 ### Step 2: Install the gems with `bundle install`
 
@@ -89,57 +87,70 @@ bin/rails dev
 
 You can now see the system working [locally](http://localhost:3000)
 
-####
+If you get an error concerning Turbo or Redis, you may need to start Redis in the background
 
-If you get an error concerning Turbo or Redis, you may need to do
 ```bash
-bin/rails turbo:install:redis
-redis-server --daemonize yes  # Starts redis in the background
+redis-server --daemonize yes
 ```
 
 ## Code Style
 
 Before committing your code, ensure that it follows ruby and rails style standards
+
 ```bash
 bundle exec rubocop -A
 ```
 
 We recommend and follow the [Ruby Style Guide](https://github.com/rubocop-hq/ruby-style-guide)
 
-# Docker installation (optional):
+# Docker installation (optional)
 
 - Make sure you have docker installed on your machine in order to run this app using docker.
 
-## Steps are necessary to get the application up and running with docker.
+## Steps are necessary to get the application up and running with docker
 
-### Setup the application from scratch
+```bash
+make setup
+```
 
-    make setup
+### Start the application in a docker container
 
-### Start the application in a docker container.
+```bash
+make up
+```
 
-    make up
+### Stop the application running in the docker container
 
-### Stop the application running in the docker container.
+```bash
+make down
+```
 
-    make down
+### Show the status of the containers running the application (Helpful for troubleshooting docker containers)
 
-### Show the status of the containers running the application (Helpful for troubleshooting docker containers).
+```bash
+make status
+```
 
-    make status
+### Migrate the database
 
-### Migrate the database.
+```bash
+make migrate
+```
 
-    make migrate
+### Show rails routes
 
-### Show rails routes.
+```bash
+make routes
+```
 
-    make routes
+### Start rails console in container
 
-### Start rails console in container.
-
-    make console
+```bash
+make console
+```
 
 ### Run bundle (executes make down && make up commands)
 
-    make bundle
+```bash
+make bundle
+```

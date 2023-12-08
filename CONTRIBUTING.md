@@ -13,7 +13,7 @@ which you can join by signing up at [Agile Ventures](https://www.agileventures.o
 ## Pull Request Process
 
 1. Each developer should work with a [fork](https://help.github.com/articles/fork-a-repo/).
-2. [install on your dev environment](https://github.com/mattlindsey/mythographer/blob/main/CONTRIBUTING.md).
+2. [install on your dev environment](https://github.com/mattlindsey/mythographer#setting-up-for-development).
 3. Before starting work on a new feature or bugfix, please ensure you have [synced your fork to upstream](https://help.github.com/articles/syncing-a-fork/)
 4. Create a branch on your fork and make your updates.
 5. Ensure any install or build dependencies are removed before the end of the layer when doing a
