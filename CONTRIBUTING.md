@@ -16,10 +16,7 @@ which you can join by signing up at [Agile Ventures](https://www.agileventures.o
 2. [install on your dev environment](https://github.com/mattlindsey/mythographer#setting-up-for-development).
 3. Before starting work on a new feature or bugfix, please ensure you have [synced your fork to upstream](https://help.github.com/articles/syncing-a-fork/)
 4. Create a branch on your fork and make your updates.
-5. Ensure any install or build dependencies are removed before the end of the layer when doing a
-   build.
-6. Update the PROJECT_SETUP.md with details of changes to the interface, this includes new environment
-   variables, exposed ports, useful file locations and container parameters.
+5. Update README.md with details of changes to the setup, such as new environment variables.
 7. Submit a PR and indicate that it is ready for review and a maintainer will merge it when it is complete.
 
 Whatever you are working on, or however far you get please do open a "Work in Progress" (WIP) [pull request](https://help.github.com/articles/creating-a-pull-request/) (just prepend your PR title with "[WIP]" ) so that others in the team can comment on your approach. Even if you hate your horrible code :-) please throw it up there and we'll help guide your code to fit in with the rest of the project.
