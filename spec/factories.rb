@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :story_god do
-    
   end
 
   factory(:mythology) do
