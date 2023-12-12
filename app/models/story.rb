@@ -1,7 +1,11 @@
 class Story < ApplicationRecord
   belongs_to :mythology
+
   validates :title, presence: true
   validates :body, presence: true
+
+  has_many :storygods, dependent: :destroy
+  accepts_nested_attributes_for :storygods
   has_many :gods, through: :storygod
 
   CREATIVITY_TEMPS = {

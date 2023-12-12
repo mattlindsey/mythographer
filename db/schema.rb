@@ -56,6 +56,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_08_150456) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["god_id"], name: "index_story_gods_on_god_id"
+    t.index ["story_id", "god_id"], name: "index_story_gods_on_story_id_and_god_id", unique: true
     t.index ["story_id"], name: "index_story_gods_on_story_id"
   end
 
