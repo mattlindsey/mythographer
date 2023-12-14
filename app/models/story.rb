@@ -4,7 +4,7 @@ class Story < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
 
-  has_many :storygods, dependent: :destroy
+  has_many :storygods, dependent: :destroy, class_name: "StoryGod"
   accepts_nested_attributes_for :storygods
   has_many :gods, through: :storygod
 
