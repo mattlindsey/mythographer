@@ -76,7 +76,9 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'coveralls_reborn', require: false
   gem "simplecov", require: false
+  gem "simplecov-small-badge", require: false
 end
 
 gem "tailwindcss-rails", "~> 2.0"
