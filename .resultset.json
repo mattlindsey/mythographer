@@ -157,6 +157,8 @@
           1,
           1,
           1,
+          null,
+          1,
           null
         ]
       },
@@ -175,6 +177,11 @@
       "/home/runner/work/mythographer/mythographer/app/models/story.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          1,
+          null,
           1,
           1,
           1,
@@ -199,8 +206,36 @@
           null,
           null
         ]
+      },
+      "/home/runner/work/mythographer/mythographer/app/models/story_god.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1702921481
+    "timestamp": 1703172260
   }
 }
