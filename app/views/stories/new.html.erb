@@ -16,9 +16,8 @@
     <%= f.input :mythology_id, collection: @mythologies, label_method: :name, value_method: :id,
       default: @mythologies.first,
       input_html: { class: 'rounded  mt-5 ml-2', style: 'margin-left: 15px;' } %>
-
-
-
+    <% s=Story.first # TODO: fix this %>
+    <%= link_to 'Add gods', new_story_story_god_path(s), data: { turbo_frame: :modal, action: "dialog#open" } %>
     <%= f.input :creativity, collection: %w[Conservative Balanced Inventive],
       default: 'Conservative',
       input_html: { class: 'rounded mt-5', style: 'margin-left: 22px;' } %>
