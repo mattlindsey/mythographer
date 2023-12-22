@@ -20,4 +20,15 @@ RSpec.describe Story do
   it "returns the correct creativity_temp" do
     expect(story.creativity_temp).to be(0.5)
   end
+
+  it "calls broadcast_replace_to with correct argument after update" do
+    # mock_story = instance_spy(described_class)
+    # allow(described_class).to receive(:broadcast_replace_to).with("stories").and_return(true)
+    # story.save
+    # expect(story).to have_received(:broadcast_replace_to)
+    # expect(mock_story).to have_received(:broadcast_replace_to).with("stories")
+    # OR
+    expect(story).to receive(:broadcast_replace_to).with("stories") # rubocop:disable RSpec/MessageSpies
+    story.save
+  end
 end
