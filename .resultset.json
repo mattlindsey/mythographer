@@ -29,6 +29,12 @@
           null
         ]
       },
+      "/home/runner/work/mythographer/mythographer/app/helpers/story_gods_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/home/runner/work/mythographer/mythographer/app/controllers/mythologies_controller.rb": {
         "lines": [
           1,
@@ -44,7 +50,7 @@
           1,
           null,
           1,
-          0,
+          2,
           null,
           null,
           1,
@@ -89,6 +95,53 @@
           null,
           null,
           1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/runner/work/mythographer/mythographer/app/controllers/story_gods_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
           null,
           1,
           0,
@@ -199,7 +252,7 @@
           null,
           1,
           null,
-          4,
+          5,
           null,
           0,
           null,
@@ -236,6 +289,6 @@
         ]
       }
     },
-    "timestamp": 1703175274
+    "timestamp": 1703227025
   }
 }
