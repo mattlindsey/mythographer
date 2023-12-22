@@ -1,0 +1,2 @@
+module StoryGodsHelper
+end
