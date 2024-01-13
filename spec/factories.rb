@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :story_god do
+  end
+
   factory(:mythology) do
     name { "Sample Name" }
     description { "Sample Description" }

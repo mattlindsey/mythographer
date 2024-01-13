@@ -1,0 +1,8 @@
+<%= form.hidden_field :id %>
+<div>
+  <%= form.input :god_id,
+      input_html: { class: 'rounded', style: 'margin-left: 62px;' } %>
+  <%= form.input :role, collection: StoryGod::ROLES,
+      default: StoryGod::ROLES.first,
+      input_html: { class: 'rounded mt-5', style: 'margin-left: 62px;' } %>
+</div>

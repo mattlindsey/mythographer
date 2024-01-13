@@ -13,7 +13,10 @@ class StoriesController < ApplicationController
 
   def new
     @mythologies = Mythology.all
-    @story = Story.new
+    @gods = God.all
+    @storygod = StoryGod.new
+    # @story = Story.new(storygods: [StoryGod.new])
+    @story = Story.new(storygods: [@storygod])
   end
 
   def edit
@@ -53,6 +56,7 @@ class StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:title, :mythology_id, :body, :creativity)
+    params.require(:story).permit(:title, :mythology_id, :body, :creativity,
+      storygods_attributes: [:god_id, :role, :_destroy])
   end
 end

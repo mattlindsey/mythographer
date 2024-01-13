@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", :as => :rails_health_check
 
-  resources :stories, only: [:index, :show, :new, :create, :destroy]
-
+  resources :stories, only: [:index, :show, :new, :create, :destroy] do
+    resources :story_gods, shallow: true
+    # TODO:
+    # https://dev.to/pezza/dynamic-nested-forms-with-turbo-3786
+  end
   # Defines the root path route ("/")
   root "mythologies#index"
 end

@@ -1,0 +1,40 @@
+<%= simple_form_for @story do |f| %>
+  <% if f.object.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(f.object.errors.count, "error") %> prohibited this story from being saved:</h2>
+      <ul>
+        <% f.object.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.input :title, 
+      input_html: { class: 'rounded', style: 'margin-left: 62px;' } %>
+    <%= f.input :mythology_id, collection: @mythologies, label_method: :name, value_method: :id,
+      default: @mythologies.first,
+      input_html: { class: 'rounded  mt-5', style: 'margin-left: 15px;' } %>
+    <%= f.input :creativity, collection: Story::CREATIVITY_TEMPS.keys,
+      default: Story::CREATIVITY_TEMPS.keys.first,
+      input_html: { class: 'rounded mt-5', style: 'margin-left: 22px;' } %>
+    <%= f.hidden_field :body, input_placeholder: 'AI will generate this' %>
+    <div>
+      LLM Name <%= select_tag "llm_name", options_for_select(LLMS), 
+      class: 'rounded mt-5',
+      style: 'margin-left: 10px;' %>
+    </div>
+    <h4>Include these Gods</h4>
+    <div id="storygods">
+    <%= f.fields_for :storygods do |god_subform| %>
+      <%= render "story_gods/form", form: god_subform %>
+    <% end %>
+    </div>
+    <div>
+      <%# s=Story.first # TODO: fix this %>
+      <%= link_to 'Add another god', story_story_gods_path(Story.first), data: { turbo_frame: :modal, action: "dialog#open" } %>
+    </div>
+    <%= f.button :submit, "Generate Story", 
+        class:'px-4 py-4 mt-4 font-bold bg-green-500 hover:bg-green-700 rounded' %>
+  </div>
+<% end %>
