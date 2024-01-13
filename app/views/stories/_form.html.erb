@@ -19,7 +19,11 @@
       default: Story::CREATIVITY_TEMPS.keys.first,
       input_html: { class: 'rounded mt-5', style: 'margin-left: 22px;' } %>
     <%= f.hidden_field :body, input_placeholder: 'AI will generate this' %>
-
+    <div>
+      LLM Name <%= select_tag "llm_name", options_for_select(LLMS), 
+      class: 'rounded mt-5',
+      style: 'margin-left: 10px;' %>
+    </div>
     <h4>Include these Gods</h4>
     <div id="storygods">
     <%= f.fields_for :storygods do |god_subform| %>
