@@ -65,3 +65,7 @@ jobs:
         run: bundle exec brakeman -q -w2
       - name: Lint Ruby files
         run: bundle exec rubocop --parallel --format progress --format github --color
+  
+  permissions:
+    contents: write
+  
