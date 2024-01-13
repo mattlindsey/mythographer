@@ -49,6 +49,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: coverage
+    permissions:
+      contents: write
 
   lint:
     runs-on: ubuntu-latest
@@ -65,7 +67,3 @@ jobs:
         run: bundle exec brakeman -q -w2
       - name: Lint Ruby files
         run: bundle exec rubocop --parallel --format progress --format github --color
-  
-  permissions:
-    contents: write
-  
