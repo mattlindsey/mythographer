@@ -1,7 +1,9 @@
 <%= form.hidden_field :id %>
 <div>
   <%= form.label :god_id, style: "display: block" %>
-  <%= form.text_field :god_id %>
+  <%= form.text_field :god_id, default: 1 %>
   <%= form.label :role, style: "display: block" %>
-  <%= form.text_field :role %>
+  <%= form.input :role, collection: StoryGod::ROLES,
+      default: StoryGod::ROLES.first,
+      input_html: { class: 'rounded  mt-5 ml-2', style: 'margin-left: 15px;' } %>
 </div>

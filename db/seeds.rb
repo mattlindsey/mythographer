@@ -27,5 +27,5 @@ end
   God.create_with(mythology_id: 3, pantheon_id: 3).find_or_create_by!(name: god_name)
 end
 
-Story.create_with(mythology_id: 1, creativity: 'Conservative').find_or_create_by(title: "Sample Story with Zeus", body: 'The most powerful god Zeus was having a bad day.')
-StoryGod.create_with(role: 'Protagonist').find_or_create_by(story_id: 1, god_id: 1)
+Story.create_with(mythology_id: 1, creativity: "Conservative").find_or_create_by(title: "Sample Story with Zeus", body: "The most powerful god Zeus was having a bad day.")
+StoryGod.create_with(role: "Protagonist").find_or_create_by(story_id: 1, god_id: 1)

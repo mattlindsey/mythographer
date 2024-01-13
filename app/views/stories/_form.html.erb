@@ -21,14 +21,15 @@
       input_html: { class: 'rounded mt-5', style: 'margin-left: 22px;' } %>
     <%= f.hidden_field :body, input_placeholder: 'AI will generate this' %>
 
-     <%= link_to 'Add gods', new_story_story_god_path(s), data: { turbo_frame: :modal, action: "dialog#open" } %>
     <h4>Gods</h4>
     <div id="storygods">
     <%= f.fields_for :storygods do |god_subform| %>
       <%= render "story_gods/form", form: god_subform %>
     <% end %>
     </div>
-
+    <div>
+      <%= link_to 'Add more gods', new_story_story_god_path(s), data: { turbo_frame: :modal, action: "dialog#open" } %>
+    </div>
     <%= f.button :submit, "Generate Story", 
         class:'px-4 py-4 mt-4 font-bold bg-green-500 hover:bg-green-700 rounded' %>
   </div>

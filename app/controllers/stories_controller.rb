@@ -13,7 +13,9 @@ class StoriesController < ApplicationController
 
   def new
     @mythologies = Mythology.all
-    @story = Story.new(storygods: [StoryGod.new])
+    @storygod = StoryGod.new
+    # @story = Story.new(storygods: [StoryGod.new])
+    @story = Story.new(storygods: [@storygod])
   end
 
   def edit
