@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file.
 
 LLMS = %w[
-  openai,
+  openai
   google
 ].freeze
 

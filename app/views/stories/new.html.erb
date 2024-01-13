@@ -20,6 +20,11 @@
       default: 'Conservative',
       input_html: { class: 'rounded mt-5', style: 'margin-left: 22px;' } %>
     <%= f.hidden_field :body, input_placeholder: 'AI will generate this' %>
+    <div>
+      LLM Name <%= select_tag "llm_name", options_for_select(LLMS), 
+      class: 'rounded mt-5',
+      style: 'margin-left: 10px;' %>
+    </div>
     <%= f.button :submit, "Generate Story", 
         class:'px-4 py-4 mt-4 font-bold bg-green-500 hover:bg-green-700 rounded' %>
   </div>

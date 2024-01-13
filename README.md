@@ -55,7 +55,7 @@ bundle install
 
 #### PostgreSQL and the `pg` gem
 
-The database used is [postgreSQL](https://www.postgresql.org/).  You need to have this installed and running on your local machine.
+The database used is [postgreSQL](https://www.postgresql.org/). You need to have this installed and running on your local machine.
 
 ### Step 3: Set up the database and seed data
 
@@ -71,7 +71,7 @@ bin/rails db:seed
 Now you're ready to run the tests:
 
 ```bash
-bin/rails test:all
+bundle exec rspec
 ```
 
 ### Step 5: Set your OpenAI key
