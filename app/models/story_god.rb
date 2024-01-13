@@ -5,7 +5,10 @@ class StoryGod < ApplicationRecord
   # validates :god, presence: true
   validates :story, uniqueness: {scope: :god}
   validates :god, uniqueness: {scope: :story}
-  accepts_nested_attributes_for :story
+
+  def get_name
+    god[:name]
+  end
 
   ROLES = [
     "Protagonist",

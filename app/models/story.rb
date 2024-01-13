@@ -5,7 +5,7 @@ class Story < ApplicationRecord
   validates :body, presence: true
 
   has_many :storygods, dependent: :destroy, class_name: "StoryGod"
-  accepts_nested_attributes_for :storygods
+  accepts_nested_attributes_for :storygods, reject_if: :all_blank, allow_destroy: true
   has_many :gods, through: :storygod
 
   CREATIVITY_TEMPS = {

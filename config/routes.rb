@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", :as => :rails_health_check
 
   resources :stories, only: [:index, :show, :new, :create, :destroy] do
-    resources :story_gods
+    resources :story_gods, shallow: true
+    # TODO:
+    # https://dev.to/pezza/dynamic-nested-forms-with-turbo-3786
   end
   # Defines the root path route ("/")
   root "mythologies#index"
