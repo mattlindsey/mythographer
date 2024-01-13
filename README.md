@@ -1,7 +1,7 @@
 # Mythographer README
 
 ![Tests status](https://github.com/mattlindsey/mythographer/actions/workflows/ci.yml/badge.svg?branch=main)
-[![Coverage](https://mattlindsey.github.io/mythographer/coverage/coverage_badge_total.png)](https://mattlindsey.github.io/mythographer/coverage/index.html)
+[![Coverage](https://mattlindsey.github.io/mythographer/coverage_badge_total.svg)](https://mattlindsey.github.io/mythographer/index.html)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/mattlindsey/mythographer/blob/main/LICENSE)
 
 Creative design and generation of myths using artificial intelligence.
