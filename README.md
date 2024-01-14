@@ -7,7 +7,8 @@
 Creative design and generation of myths using artificial intelligence.
 
 This app will allow anyone to create unique stories and "worlds" based on elements from existing mythologies.
-After selecting the desired elements (like gods, heroes, cultures, geography) a story will be created using artificial intellegence. Additional features could include generation of images, memes, or items of "lore."
+After selecting the desired elements (like gods, heroes, cultures, geography) a story will be created using artificial intellegence.
+Additional features could include generation of images, memes, or items of "lore."
 
 # Contributing
 
@@ -74,7 +75,7 @@ Now you're ready to run the tests:
 bundle exec rspec
 ```
 
-### Step 5: Set your OpenAI key
+### Step 5: Set your OpenAI key using export or .env file
 
 ```bash
 export OPENAI_API_KEY=sk-key
@@ -83,7 +84,7 @@ export OPENAI_API_KEY=sk-key
 ### Step 6. Start the server
 
 ```bash
-bin/rails dev
+bin/dev
 ```
 
 You can now see the system working [locally](http://localhost:3000)
