@@ -13,7 +13,7 @@ class StoriesController < ApplicationController
 
   def new
     @mythologies = Mythology.all
-    @gods = God.all
+    @gods = God.where(mythology_id: @mythologies.first.id)
     @storygod = StoryGod.new
     # @story = Story.new(storygods: [StoryGod.new])
     @story = Story.new(storygods: [@storygod])
