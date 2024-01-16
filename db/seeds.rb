@@ -36,7 +36,6 @@ m = Mythology.where(name: "Greek").first
 Story.create_with(mythology_id: m.id, creativity: "Conservative").find_or_create_by(title: "Sample Story with Zeus", body: "The most powerful god Zeus was having a bad day.")
 StoryGod.create_with(role: "Protagonist").find_or_create_by(story_id: 1, god_id: 1)
 
-
 zeus = God.find_by(name: "Zeus")
 zeus.update(description: "The king of the gods, ruler of Mount Olympus, and god of the sky, lightning, and thunder. Zeus is a powerful figure often depicted with a thunderbolt.")
 zeus.save
@@ -93,7 +92,6 @@ hestia = God.find_by(name: "Hestia")
 hestia.update(description: "Goddess of the hearth, home, and family. Hestia is a gentle and nurturing deity, often invoked in household rituals.")
 hestia.save
 
-
 jupiter = God.find_by(name: "Jupiter")
 jupiter.update(description: "King of the gods, god of the sky and thunder. Equivalent to the Greek god Zeus, Jupiter was considered the chief deity in Roman mythology.")
 jupiter.save
@@ -149,7 +147,6 @@ pluto.save
 vesta = God.find_by(name: "Vesta")
 vesta.update(description: "Goddess of the hearth and home. Vesta was associated with the sacred fire in the hearth and symbolized home and family.")
 vesta.save
-
 
 odin = God.find_by(name: "Odin")
 odin.update(description: "Allfather and chief of the Aesir gods, Odin is associated with wisdom, war, poetry, and magic. He is often depicted as a one-eyed figure, having sacrificed an eye for knowledge.")
