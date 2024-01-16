@@ -1,7 +1,7 @@
 <ol class="list-decimal space-y-4 list-inside">
   <% @storygods.each do |story_god| %>
     <li>
-      <%= link_to story_god.role, story_god %>
+      <%= link_to story_god.role, story_story_gods_path(story_god) %>
       <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full">
         <%= story_god.story.mythology.name %>
       </button>

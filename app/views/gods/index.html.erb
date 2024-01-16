@@ -1,0 +1,21 @@
++<%= turbo_frame_tag :modal do %>
+<h1 class="font-bold">Gods</h1>
+<table class="table-auto">
+  <thead>
+    <tr>
+      <th></th>
+      <th>God</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @gods.each do |g| %>
+      <tr>
+        <td  class="px-4"><%= g.id.to_s + '. ' + g.name %></td>
+        <td><%= g.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
++<% end %>
