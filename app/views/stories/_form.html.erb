@@ -32,7 +32,7 @@
     </div>
     <div>
       <%# s=Story.first # TODO: fix this %>
-      <%= link_to 'Add another god', story_story_gods_path(Story.first), data: { turbo_frame: :modal, action: "dialog#open" } %>
+      <%= link_to 'Add another god', gods_path, data: { turbo_frame: :modal, action: "dialog#open" } %>
     </div>
     <%= f.button :submit, "Generate Story", 
         class:'px-4 py-4 mt-4 font-bold bg-green-500 hover:bg-green-700 rounded' %>
