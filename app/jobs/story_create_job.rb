@@ -15,8 +15,8 @@ class StoryCreateJob < ApplicationJob
       logger.error "Unknown LLM: #{llm_name}"
     end
 
-    prompt = Langchain::Prompt::PromptTemplate.new(template: "Tell me a very short story from {mythology_name} mythology that would be appropriately titled {title}.", input_variables: ["mythology_name", "title"])
-    prompt_text = prompt.format(mythology_name: mythology_name, title: story.title)
+    template = Langchain::Prompt.load_from_path(file_path: "app/prompts/story_create_template.yaml")
+    prompt_text = template.format(mythology_name: mythology_name, title: story.title)
     story.update(body: llm.complete(prompt: prompt_text).completion)
   end
 end
