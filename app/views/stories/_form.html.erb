@@ -18,6 +18,8 @@
     <%= f.input :creativity, collection: Story::CREATIVITY_TEMPS.keys,
       default: Story::CREATIVITY_TEMPS.keys.first,
       input_html: { class: 'rounded mt-5', style: 'margin-left: 22px;' } %>
+    <%= f.input :instructions,
+      input_html: { class: 'rounded mt-5', style: 'margin-left: 7px;' } %>
     <%= f.hidden_field :body, input_placeholder: 'AI will generate this' %>
     <div>
       LLM Name <%= select_tag "llm_name", options_for_select(LLMS), 

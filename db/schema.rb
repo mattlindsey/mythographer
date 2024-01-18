@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_08_150456) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_18_183918) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_08_150456) do
     t.datetime "updated_at", null: false
     t.bigint "mythology_id", null: false
     t.string "creativity"
+    t.string "llm_name"
+    t.string "instructions"
     t.index ["mythology_id"], name: "index_stories_on_mythology_id"
   end
 

@@ -75,10 +75,11 @@ Now you're ready to run the tests:
 bundle exec rspec
 ```
 
-### Step 5: Set your OpenAI key using export or .env file
+### Step 5: Set your OpenAI and Google keys using export or .env file
 
 ```bash
 export OPENAI_API_KEY=sk-key
+export GOOGLE_PALM_API_KEY=key
 ```
 
 ### Step 6. Start the server
