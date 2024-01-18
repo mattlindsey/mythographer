@@ -33,7 +33,7 @@ p = Pantheon.where(name: "Asgardian").first
 end
 
 m = Mythology.where(name: "Greek").first
-Story.create_with(mythology_id: m.id, creativity: "Conservative").find_or_create_by(title: "Sample Story with Zeus", body: "The most powerful god Zeus was having a bad day.")
+Story.create_with(mythology_id: m.id, creativity: "Conservative").find_or_create_by(title: "Sample Story with Zeus", body: "The most powerful god Zeus was having a bad day.", llm_name: "openai", instructions: "Zeus is unhappy.")
 StoryGod.create_with(role: "Protagonist").find_or_create_by(story_id: 1, god_id: 1)
 
 zeus = God.find_by(name: "Zeus")

@@ -13,9 +13,8 @@ class StoriesController < ApplicationController
 
   def new
     @mythologies = Mythology.all
-    @gods = God.where(mythology_id: @mythologies.first.id)
+    # @gods = God.where(mythology_id: @mythologies.first.id)
     @storygod = StoryGod.new
-    # @story = Story.new(storygods: [StoryGod.new])
     @story = Story.new(storygods: [@storygod])
   end
 
@@ -27,8 +26,7 @@ class StoriesController < ApplicationController
     @story.body = "Generating. Story should appear here. Wait a bit..."
 
     if @story.save
-      llm_name = LLM_DEFAULTS[:llm] # TODO: get llm_name from params
-      StoryCreateJob.perform_later(@story.id, llm_name)
+      StoryCreateJob.perform_later(@story.id)
       redirect_to @story
     else
       @mythologies = Mythology.all
@@ -56,7 +54,7 @@ class StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:title, :mythology_id, :body, :creativity,
-      storygods_attributes: [:god_id, :role, :_destroy])
+    params.require(:story).permit(:title, :mythology_id, :body, :creativity, :llm_name, :instructions,
+      storygods_attributes: [:id, :god_id, :role, :_destroy])
   end
 end

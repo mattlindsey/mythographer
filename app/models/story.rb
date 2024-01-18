@@ -15,6 +15,8 @@ class Story < ApplicationRecord
   }.freeze
   validates :creativity, presence: true, inclusion: {in: CREATIVITY_TEMPS.keys}
 
+  validates :llm_name, presence: true, inclusion: {in: LLMS}
+
   def creativity_temp
     CREATIVITY_TEMPS[creativity]
   end

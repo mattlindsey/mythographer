@@ -1,7 +1,6 @@
 <%= form.hidden_field :id %>
 <div>
   <%= form.input :god_id, collection: @gods, label_method: :name, value_method: :id,
-      default: @gods.first,
       input_html: { id: 'god_id', class: 'rounded', style: 'margin-left: 62px;' } %>
   <%= form.input :role, collection: StoryGod::ROLES,
       default: StoryGod::ROLES.first,

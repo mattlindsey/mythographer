@@ -12,5 +12,7 @@ FactoryBot.define do
     body { "Sample Body" }
     mythology
     creativity { "Balanced" }
+    llm_name { "openai" }
+    instructions { "Additional stuff" }
   end
 end
