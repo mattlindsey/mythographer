@@ -13,9 +13,8 @@ class StoriesController < ApplicationController
 
   def new
     @mythologies = Mythology.all
-    @gods = God.where(mythology_id: @mythologies.first.id)
+    # @gods = God.where(mythology_id: @mythologies.first.id)
     @storygod = StoryGod.new
-    # @story = Story.new(storygods: [StoryGod.new])
     @story = Story.new(storygods: [@storygod])
   end
 
@@ -23,8 +22,6 @@ class StoriesController < ApplicationController
   end
 
   def create
-    #@mythologies = Mythology.all
-    #@gods = God.where(mythology_id: @mythologies.first.id)
     @story = Story.new(story_params)
     @story.body = "Generating. Story should appear here. Wait a bit..."
 
