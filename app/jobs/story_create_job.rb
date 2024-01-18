@@ -4,7 +4,7 @@ class StoryCreateJob < ApplicationJob
   def perform(*args)
     story = Story.find(args[0])
     mythology_name = story.mythology.name
-    llm_name = args[1] || LLM_DEFAULTS[:llm]
+    llm_name = story.llm_name
 
     case llm_name
     when "openai"
