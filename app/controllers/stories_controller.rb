@@ -13,7 +13,7 @@ class StoriesController < ApplicationController
 
   def new
     @mythologies = Mythology.all
-    # @gods = God.where(mythology_id: @mythologies.first.id)
+    @gods = God.where(mythology_id: @mythologies.first.id)
     @storygod = StoryGod.new
     @story = Story.new(storygods: [@storygod])
   end
@@ -30,6 +30,7 @@ class StoriesController < ApplicationController
       redirect_to @story
     else
       @mythologies = Mythology.all
+      @gods = God.where(mythology_id: @mythologies.first.id)
       render :new, status: :unprocessable_entity
     end
   end

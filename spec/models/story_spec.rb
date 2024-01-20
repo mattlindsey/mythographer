@@ -14,7 +14,7 @@ RSpec.describe Story do
   it "does not save a story with empty title" do
     story.title = nil
     expect(story.save).to be false
-    # expect(story.errors[:title]).to include("can't be blank")
+    expect(story.errors[:title]).to include("can't be blank")
   end
 
   it "returns the correct creativity_temp" do
@@ -22,12 +22,6 @@ RSpec.describe Story do
   end
 
   it "calls broadcast_replace_to with correct argument after update" do
-    # mock_story = instance_spy(described_class)
-    # allow(described_class).to receive(:broadcast_replace_to).with("stories").and_return(true)
-    # story.save
-    # expect(story).to have_received(:broadcast_replace_to)
-    # expect(mock_story).to have_received(:broadcast_replace_to).with("stories")
-    # OR
     expect(story).to receive(:broadcast_replace_to).with("stories") # rubocop:disable RSpec/MessageSpies
     story.save
   end
