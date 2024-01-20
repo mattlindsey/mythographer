@@ -14,6 +14,11 @@ RSpec.describe Story do
   it "does not save a story with empty title" do
     story.title = nil
     expect(story.save).to be false
+  end
+
+  it "displays reason for not saving a story" do
+    story.title = nil
+    story.save
     expect(story.errors[:title]).to include("can't be blank")
   end
 
