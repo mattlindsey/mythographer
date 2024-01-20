@@ -1,5 +1,4 @@
 FactoryBot.define do
-
   factory :mythology do
     name { "Sample Name" }
     description { "Sample Description" }
@@ -29,6 +28,6 @@ FactoryBot.define do
   factory :story_god do
     story
     god
-    role { "Protagonist"}
+    role { "Protagonist" }
   end
 end

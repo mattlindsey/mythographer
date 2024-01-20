@@ -20,15 +20,15 @@ class StoryCreateJob < ApplicationJob
     prompt_text = story_template.format(mythology_name: mythology_name, title: story.title)
 
     role_template = Langchain::Prompt.load_from_path(file_path: "app/prompts/story_role_template.yaml")
-    StoryGod.where(story_id: args[0]).each do |g|
+    StoryGod.where(story_id: args[0]).find_each do |g|
       god_name = g.god.name
       role = g.role
-      prompt_text += ' ' + role_template.format(god: god_name, role: role)
+      prompt_text += " " + role_template.format(god: god_name, role: role)
     end
 
-    prompt_text = 'TODO: Fix this' unless prompt_text # TODO: story_create_job_spec.rb fails without this line
+    prompt_text ||= "TODO: Fix this" # TODO: story_create_job_spec.rb fails without this line
     if instructions
-      prompt = prompt_text + ' Additional instructions for generating the story are ' + instructions
+      prompt = prompt_text + " Additional instructions for generating the story are " + instructions
     end
 
     story.update(body: llm.complete(prompt: prompt).completion)
