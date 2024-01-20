@@ -1,0 +1,6 @@
+_type: prompt
+template: |
+  Include in the story the god named {god} in the role of {role}.
+input_variables:
+  - god
+  - role

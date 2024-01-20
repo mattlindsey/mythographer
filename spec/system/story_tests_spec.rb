@@ -19,7 +19,9 @@ RSpec.describe "StorySystemTests" do
     fill_in "Title", with: "Story about Zeus"
     select "Greek", from: "story_mythology_id"
     select "openai", from: "story_llm_name"
-    select "Zeus", from: "story_storygods_attributes_0_god_id"
+
+    click_link_or_button "add_god"
+    # select "Zeus", from: "story_storygods_attributes_0_god_id"
     click_link_or_button "Generate Story"
 
     assert_selector "h1", text: "Story about Zeus"

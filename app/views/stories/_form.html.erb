@@ -1,4 +1,10 @@
-<%= simple_form_for @story do |f| %>
+<%= simple_form_for @story, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+  <template data-nested-form-target="template">
+    <%= f.fields_for :storygods, StoryGod.new, child_index: 'NEW_RECORD' do |storygod_fields| %>
+      <%= render "story_gods/form", form: storygod_fields %>
+    <% end %>
+  </template>
+
   <% if f.object.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(f.object.errors.count, "error") %> prohibited this story from being saved:</h2>
@@ -9,6 +15,7 @@
       </ul>
     </div>
   <% end %>
+
   <div>
     <%= f.input :title, 
       input_html: { class: 'rounded', style: 'margin-left: 62px;' } %>
@@ -24,17 +31,15 @@
     <%= f.input :llm_name, collection: LLMS,
       default: LLM_DEFAULTS[:llm],
       input_html: { class: 'rounded mt-5', style: 'margin-left: 22px;' } %>
-    <h4>Include these Gods</h4>
-    <div id="storygods">
-    <%= f.fields_for :storygods do |god_subform| %>
-      <%= render "story_gods/form", form: god_subform %>
-    <% end %>
+    <h4>Include the following Gods:</h4>
+    <div data-nested-form-target="target"></div>
+    <div>
+      <button type="button" id="add_god" data-action="nested-form#add">Add a god with a role</button>
     </div>
     <div>
-      <%# s=Story.first # TODO: fix this %>
-      <%= link_to 'Add another god', gods_path, data: { turbo_frame: :modal, action: "dialog#open" } %>
+      <%= link_to 'List of all gods', gods_path, data: { turbo_frame: :modal, action: "dialog#open" } %>
     </div>
-    <%= f.button :submit, "Generate Story", 
-        class:'px-4 py-4 mt-4 font-bold bg-green-500 hover:bg-green-700 rounded' %>
+      <%= f.button :submit, "Generate Story", 
+          class:'px-4 py-4 mt-4 font-bold bg-green-500 hover:bg-green-700 rounded' %>
   </div>
 <% end %>

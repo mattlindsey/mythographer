@@ -56,6 +56,6 @@ class StoriesController < ApplicationController
 
   def story_params
     params.require(:story).permit(:title, :mythology_id, :body, :creativity, :llm_name, :instructions,
-      storygods_attributes: [:id, :god_id, :role, :_destroy])
+      storygods_attributes: [:id, :_destroy, :god_id, :role])
   end
 end
