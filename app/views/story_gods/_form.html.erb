@@ -1,5 +1,5 @@
 <%= form.hidden_field :id %>
-<div>
+<div class="nested-form-wrapper" data-new-record="<%= form.object.new_record? %>">
   <%= form.input :god_id, collection: @gods, label_method: :name, value_method: :id,
       default: @gods.first,
       input_html: { class: 'rounded', style: 'margin-left: 62px;' } %>
