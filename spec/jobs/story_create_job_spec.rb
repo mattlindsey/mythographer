@@ -14,14 +14,14 @@ RSpec.describe StoryCreateJob do
     llm = instance_double(Langchain::LLM::OpenAI)
     llm_response = instance_double(Langchain::LLM::OpenAIResponse)
 
-    allow(llm_response).to receive(:completion).and_return("Something")
-    allow(llm).to receive(:complete).and_return(llm_response)
-
     prompt_template = instance_double(Langchain::Prompt::PromptTemplate)
-    allow(prompt_template).to receive(:format)
+    allow(prompt_template).to receive(:format).and_return("SomePrompt")
 
     allow(Langchain::LLM::OpenAI).to receive(:new).and_return(llm)
     allow(Langchain::Prompt::PromptTemplate).to receive(:new).and_return(prompt_template)
+
+    allow(llm_response).to receive(:completion).and_return("SomeResponse")
+    allow(llm).to receive(:complete).and_return(llm_response)
 
     expect(described_class.new.perform(story.id)).to be true
   end
