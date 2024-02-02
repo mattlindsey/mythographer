@@ -23,7 +23,7 @@ end
 
 m = Mythology.where(name: "Roman").first
 ["Jupiter", "Juno", "Neptune", "Ceres", "Mars", "Minerva", "Apollo", "Diana", "Vulcan", "Venus", "Mercury", "Bacchus", "Pluto", "Vesta"].each do |god_name|
-  God.create_with(mythology_id: m.id, pantheon_id: 1).find_or_create_by!(name: god_name)
+  God.create_with(mythology_id: m.id, pantheon_id: p.id).find_or_create_by!(name: god_name)
 end
 
 m = Mythology.where(name: "Norse").first
