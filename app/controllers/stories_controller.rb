@@ -6,7 +6,6 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     redirect_to stories_path
   end
@@ -23,7 +22,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-    @story.body = "Generating. Story should appear here. Wait a bit..."
+    @story.content = "Generating. Story should appear here. Wait a bit..."
 
     if @story.save
       StoryCreateJob.perform_later(@story.id)
@@ -55,7 +54,7 @@ class StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:title, :mythology_id, :body, :creativity, :llm_name, :instructions,
+    params.require(:story).permit(:title, :mythology_id, :content, :creativity, :llm_name, :instructions,
       storygods_attributes: [:id, :_destroy, :god_id, :role])
   end
 end

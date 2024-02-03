@@ -26,6 +26,6 @@ class StoryCreateJob < ApplicationJob
       prompt = prompt_text + " Additional instructions for generating the story are " + instructions
     end
 
-    story.update(body: llm.complete(prompt: prompt).completion)
+    story.update(content: llm.complete(prompt: prompt).completion)
   end
 end
