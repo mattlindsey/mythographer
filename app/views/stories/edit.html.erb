@@ -1,0 +1,13 @@
+<%# app/views/messages/_form.html.erb %>
+<h1><%= @story.title %></h1>
+<%= form_with model: @story do |form| %>
+  <div id="<%= dom_id(@story) %>" class="field">
+    <%= form.rich_text_area :content %>
+  </div>
+  <%= form.submit "Update Story",
+      class:'px-4 py-4 mt-4 font-bold bg-green-500 hover:bg-green-700 rounded' %>
+<% end %>
+<br>
+
+<%= link_to "Delete", story_path(@story), data: { "turbo-method": :delete },
+            class: "px-4 py-4 bg-green-500 hover:bg-green-700 rounded" %>

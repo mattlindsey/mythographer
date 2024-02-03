@@ -2,7 +2,8 @@ class Story < ApplicationRecord
   belongs_to :mythology
 
   validates :title, presence: true
-  validates :body, presence: true
+  # validates :body, presence: true
+  has_rich_text :content
 
   has_many :storygods, dependent: :destroy, class_name: "StoryGod"
   accepts_nested_attributes_for :storygods, reject_if: :all_blank, allow_destroy: true

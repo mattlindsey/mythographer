@@ -17,6 +17,8 @@ Rails:
   Enabled: true # enable rubocop-rails cops
 Rails/I18nLocaleTexts:
   Enabled: false # disable this cop because not using locales for now
+Rails/CreateTableWithTimestamps:
+  Enabled: false # disable for action text table
 Bundler/DuplicatedGem:
   Enabled: false # ignore duplicated gem errors because we will have duplicated gems when dual booting
 RSpec/ExampleLength:

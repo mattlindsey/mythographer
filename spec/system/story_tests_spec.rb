@@ -26,4 +26,12 @@ RSpec.describe "StorySystemTests" do
 
     assert_selector "h1", text: "Story about Zeus"
   end
+
+  # TODO: Add following test
+  # it "edits an existing story" do
+  #   create(:story)
+
+  #   visit stories_path
+  #   click_link_or_button "Sample Title"
+  # end
 end

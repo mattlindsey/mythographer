@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", :as => :rails_health_check
 
   resources :gods
-  resources :stories, only: [:index, :show, :new, :create, :destroy] do
+  resources :stories do
     resources :story_gods # , shallow: true
     # TODO:
     # https://dev.to/pezza/dynamic-nested-forms-with-turbo-3786

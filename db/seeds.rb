@@ -33,8 +33,9 @@ p = Pantheon.where(name: "Asgardian").first
 end
 
 m = Mythology.where(name: "Greek").first
-Story.create_with(mythology_id: m.id, creativity: "Conservative").find_or_create_by(title: "Sample Story with Zeus", body: "The most powerful god Zeus was having a bad day.", llm_name: "openai", instructions: "Zeus is unhappy.")
-StoryGod.create_with(role: "Protagonist").find_or_create_by(story_id: 1, god_id: 1)
+s = Story.create_with(mythology_id: m.id, creativity: "Conservative").find_or_create_by(title: "Sample Story with Zeus", llm_name: "openai", instructions: "Zeus is unhappy.")
+g = God.find_by(name: "Zeus")
+StoryGod.create_with(role: "Protagonist").find_or_create_by(story_id: s.id, god_id: g.id)
 
 zeus = God.find_by(name: "Zeus")
 zeus.update(description: "The king of the gods, ruler of Mount Olympus, and god of the sky, lightning, and thunder. Zeus is a powerful figure often depicted with a thunderbolt.")
