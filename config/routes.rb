@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     resources :story_gods # , shallow: true
     # TODO:
     # https://dev.to/pezza/dynamic-nested-forms-with-turbo-3786
+    collection do
+      get :update_gods
+    end
   end
   # Defines the root path route ("/")
   root "mythologies#index"

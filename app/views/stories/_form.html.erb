@@ -21,7 +21,7 @@
       input_html: { class: 'rounded', style: 'margin-left: 62px;' } %>
     <%= f.input :mythology_id, collection: @mythologies, label_method: :name, value_method: :id,
       default: @mythologies.first,
-      input_html: { class: 'rounded  mt-5', style: 'margin-left: 15px;' } %>
+      input_html: { class: 'rounded  mt-5', style: 'margin-left: 15px;', data: { controller: 'gods', action: 'change->gods#update' } } %>
     <%= f.input :creativity, collection: Story::CREATIVITY_TEMPS.keys,
       default: Story::CREATIVITY_TEMPS.keys.first,
       input_html: { class: 'rounded mt-5', style: 'margin-left: 22px;' } %>
@@ -32,7 +32,9 @@
       default: LLM_DEFAULTS[:llm],
       input_html: { class: 'rounded mt-5', style: 'margin-left: 22px;' } %>
     <h4>Include the following Gods:</h4>
-    <div data-nested-form-target="target"></div>
+    <%= turbo_frame_tag :gods_list do %>
+      <div data-nested-form-target="target"></div>
+    <% end %>
     <div>
       <button type="button" id="add_god" data-action="nested-form#add">Add a god with a role</button>
     </div>
