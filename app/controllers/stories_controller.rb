@@ -12,7 +12,7 @@ class StoriesController < ApplicationController
 
   def new
     @mythologies = Mythology.all
-    @gods = God.where(mythology_id: @mythologies.first.id)
+    @gods = []
     @storygod = StoryGod.new
     @story = Story.new(storygods: [@storygod])
   end
@@ -29,7 +29,7 @@ class StoriesController < ApplicationController
       redirect_to @story
     else
       @mythologies = Mythology.all
-      @gods = God.where(mythology_id: @mythologies.first.id)
+      @gods = God.where(mythology_id: @story.mythology_id)
       render :new, status: :unprocessable_entity
     end
   end
@@ -45,6 +45,13 @@ class StoriesController < ApplicationController
   def destroy
     @story.destroy
     redirect_to stories_path, notice: "Story was successfully destroyed."
+  end
+
+  def update_gods
+    @gods = God.where(mythology_id: params[:mythology_id])
+    respond_to do |format|
+      format.turbo_stream
+    end
   end
 
   private
