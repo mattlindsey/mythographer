@@ -319,41 +319,8 @@
           null,
           null
         ]
-      },
-      "/home/runner/work/mythographer/mythographer/app/services/story_writing_assistant.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1713643691
+    "timestamp": 1729354716
   }
 }
