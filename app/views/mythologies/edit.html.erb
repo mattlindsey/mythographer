@@ -1,0 +1,28 @@
+<h1>Edit Mythology</h1>
+
+<%= form_with model: @mythology, local: true do |form| %>
+  <% if @mythology.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mythology.errors.count, "error") %> prohibited this mythology from being saved:</h2>
+      <ul>
+        <% @mythology.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

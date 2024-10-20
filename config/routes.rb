@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       get :update_gods
     end
   end
+
+  resources :mythologies, only: [:index, :new, :create, :edit, :update]
+
   # Defines the root path route ("/")
   root "mythologies#index"
 end
