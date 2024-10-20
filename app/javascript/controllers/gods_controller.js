@@ -14,4 +14,15 @@ export default class extends Controller {
     .then(response => response.text())
     .then(html => Turbo.renderStreamMessage(html))
   }
+
+  filterGods() {
+    const mythologyId = this.mythologyTarget.value
+    fetch(`/gods?mythology_id=${mythologyId}`, {
+      headers: {
+        Accept: "text/vnd.turbo-stream.html"
+      }
+    })
+    .then(response => response.text())
+    .then(html => Turbo.renderStreamMessage(html))
+  }
 }

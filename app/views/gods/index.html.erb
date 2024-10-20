@@ -1,5 +1,16 @@
 <%= render 'layouts/turbo_dialog' do %>
 <h1 class="font-bold">Gods</h1>
+
+<div>
+  <label for="mythology">Select Mythology:</label>
+  <select id="mythology" name="mythology" data-controller="gods" data-action="change->gods#update">
+    <option value="">All</option>
+    <% Mythology.all.each do |mythology| %>
+      <option value="<%= mythology.id %>"><%= mythology.name %></option>
+    <% end %>
+  </select>
+</div>
+
 <table class="table-auto">
   <tbody>
     <% @gods.each do |g| %>
