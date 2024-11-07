@@ -1,0 +1,11 @@
+<%= form.hidden_field :id %>
+<div class="nested-form-wrapper" data-new-record="<%= form.object.new_record? %>">
+  <%= form.input mythology_id, collection: @mythologies, label_method: :name, value_method: :id,
+      default: @mythologies.first,
+      input_html: { class: 'rounded', style: 'margin-left: 62px;' } %>
+  <%= f.input :description,
+      input_html: { class: 'rounded mt-5', style: 'margin-left: 7px;' } %>
+
+  <button type="button" data-action="nested-form#remove">Remove mythology</button>
+  <%= form.hidden_field :_destroy %>
+</div>
