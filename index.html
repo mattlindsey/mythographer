@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-10-20T13:29:21+00:00">2024-10-20T13:29:21+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-11-07T18:11:20+00:00">2024-11-07T18:11:20+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -22,14 +22,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="yellow">
-  81.6%
+  83.47%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.95
+         0.98
        </span>
     </span> hits/line
     )
@@ -42,11 +42,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>125</b> relevant lines,
-    <span class="green"><b>102</b> lines covered</span> and
-    <span class="red"><b>23</b> lines missed. </span>
+    <b>121</b> relevant lines,
+    <span class="green"><b>101</b> lines covered</span> and
+    <span class="red"><b>20</b> lines missed. </span>
     (<span class="yellow">
-  81.6%
+  83.47%
 </span>
 )
   </div>
@@ -126,12 +126,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#9fd184a543865965773023f79fd9d46e21aac7f1" class="src_link" title="app/controllers/stories_controller.rb">app/controllers/stories_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">75.68 %</td>
-            <td class="cell--number">67</td>
-            <td class="cell--number">37</td>
-            <td class="cell--number">28</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">1.03</td>
+            <td class="yellow strong cell--number t-file__coverage">81.82 %</td>
+            <td class="cell--number">60</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">27</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">1.12</td>
             
           </tr>
         
@@ -290,14 +290,14 @@
     <span class="group_name">Controllers</span>
     (<span class="covered_percent">
       <span class="red">
-  72.31%
+  75.41%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.88
+         0.92
        </span>
     </span> hits/line
     )
@@ -310,11 +310,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>65</b> relevant lines,
-    <span class="green"><b>47</b> lines covered</span> and
-    <span class="red"><b>18</b> lines missed. </span>
+    <b>61</b> relevant lines,
+    <span class="green"><b>46</b> lines covered</span> and
+    <span class="red"><b>15</b> lines missed. </span>
     (<span class="red">
-  72.31%
+  75.41%
 </span>
 )
   </div>
@@ -372,12 +372,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#9fd184a543865965773023f79fd9d46e21aac7f1" class="src_link" title="app/controllers/stories_controller.rb">app/controllers/stories_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">75.68 %</td>
-            <td class="cell--number">67</td>
-            <td class="cell--number">37</td>
-            <td class="cell--number">28</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">1.03</td>
+            <td class="yellow strong cell--number t-file__coverage">81.82 %</td>
+            <td class="cell--number">60</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">27</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">1.12</td>
             
           </tr>
         
@@ -1287,8 +1287,8 @@
   <div class="header">
     <h3>app/controllers/stories_controller.rb</h3>
     <h4>
-      <span class="red">
-  75.68%
+      <span class="yellow">
+  81.82%
 </span>
 
       lines covered
@@ -1297,9 +1297,9 @@
     
 
     <div class="t-line-summary">
-      <b>37</b> relevant lines.
-      <span class="green"><b>28</b> lines covered</span> and
-      <span class="red"><b>9</b> lines missed.</span>
+      <b>33</b> relevant lines.
+      <span class="green"><b>27</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
 
     
@@ -1471,7 +1471,7 @@
 
             
 
-            <code class="ruby">    @gods = []</code>
+            <code class="ruby">    @gods = God.where(mythology_id: @mythologies.first.id)</code>
           </li>
         </div>
       
@@ -1663,7 +1663,7 @@
 
             
 
-            <code class="ruby">      @gods = God.where(mythology_id: @story.mythology_id)</code>
+            <code class="ruby">      @gods = God.where(mythology_id: @mythologies.first.id)</code>
           </li>
         </div>
       
@@ -1851,84 +1851,12 @@
 
             
 
-            <code class="ruby">  def update_gods</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="51">
-            
-
-            
-
-            <code class="ruby">    @gods = God.where(mythology_id: params[:mythology_id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="52">
-            
-
-            
-
-            <code class="ruby">    respond_to do |format|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="53">
-            
-
-            
-
-            <code class="ruby">      format.turbo_stream</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="54">
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="55">
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="56">
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="57">
-            
-              <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">  private</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="58">
+          <li class="never" data-hits="" data-linenumber="51">
             
 
             
@@ -1938,7 +1866,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="59">
+          <li class="covered" data-hits="1" data-linenumber="52">
             
               <span class="hits">1</span>
             
@@ -1950,7 +1878,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="60">
+          <li class="covered" data-hits="1" data-linenumber="53">
             
               <span class="hits">1</span>
             
@@ -1962,7 +1890,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="61">
+          <li class="never" data-hits="" data-linenumber="54">
             
 
             
@@ -1972,7 +1900,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="62">
+          <li class="never" data-hits="" data-linenumber="55">
             
 
             
@@ -1982,7 +1910,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="63">
+          <li class="covered" data-hits="1" data-linenumber="56">
             
               <span class="hits">1</span>
             
@@ -1994,7 +1922,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="64">
+          <li class="covered" data-hits="2" data-linenumber="57">
             
               <span class="hits">2</span>
             
@@ -2006,7 +1934,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="65">
+          <li class="never" data-hits="" data-linenumber="58">
             
 
             
@@ -2016,7 +1944,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="66">
+          <li class="never" data-hits="" data-linenumber="59">
             
 
             
@@ -2026,7 +1954,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="67">
+          <li class="never" data-hits="" data-linenumber="60">
             
 
             
