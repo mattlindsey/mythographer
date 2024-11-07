@@ -1,11 +1,26 @@
-<%= form.hidden_field :id %>
-<div class="nested-form-wrapper" data-new-record="<%= form.object.new_record? %>">
-  <%= form.input mythology_id, collection: @mythologies, label_method: :name, value_method: :id,
-      default: @mythologies.first,
-      input_html: { class: 'rounded', style: 'margin-left: 62px;' } %>
-  <%= f.input :description,
-      input_html: { class: 'rounded mt-5', style: 'margin-left: 7px;' } %>
+<%= simple_form_for @mythology do |f| %>
+  <% if @mythology.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mythology.errors.count, "error") %> prohibited this mythology from being saved:</h2>
+      <ul>
+        <% @mythology.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <button type="button" data-action="nested-form#remove">Remove mythology</button>
-  <%= form.hidden_field :_destroy %>
-</div>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save Mythology" %>
+  </div>
+<% end %>

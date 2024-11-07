@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     # TODO:
     # https://dev.to/pezza/dynamic-nested-forms-with-turbo-3786
   end
+  resources :mythologies, only: [:index, :new, :create]
   # Defines the root path route ("/")
   root "mythologies#index"
 end
