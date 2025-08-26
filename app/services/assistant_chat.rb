@@ -12,7 +12,7 @@ class AssistantChat
   DONE = %w[done end eof print exit].freeze
 
   def prompt_for_message
-    puts "\n(multiline input; type 'end' on its own line when done. or 'print' to print messages, or 'exit' to exit)\n\n"
+    Rails.logger.debug "\n(multiline input; type 'end' on its own line when done. or 'print' to print messages, or 'exit' to exit)\n\n"
 
     user_message = Reline.readmultiline("Query: ", true) do |multiline_input|
       last = multiline_input.split.last
@@ -35,20 +35,20 @@ class AssistantChat
   end
 
   def print_messages(assistant)
-    puts "\n"
+    Rails.logger.debug "\n"
     assistant.messages.each do |message|
-      puts "----"
-      puts message.role + " role content: " + message.content
+      Rails.logger.debug "----"
+      Rails.logger.debug message.role + " role content: " + message.content
       case message.role
       when "assistant"
         message.tool_calls.each do |tool_call|
-          puts " " + tool_call["function"]["name"] + ": " << tool_call["function"]["arguments"]
+          Rails.logger.debug " " + tool_call["function"]["name"] + ": " << tool_call["function"]["arguments"]
         end
       when "tool"
-        puts " tool_call_id: " + message.tool_call_id
+        Rails.logger.debug " tool_call_id: " + message.tool_call_id
       end
     end
-    puts "-------"
+    Rails.logger.debug "-------"
   end
 
   def run
@@ -59,7 +59,7 @@ class AssistantChat
 
     assistant = Langchain::Assistant.load(Assistant.first.id)
 
-    puts "Welcome to your story writer assistant!"
+    Rails.logger.debug "Welcome to your story writer assistant!"
 
     loop do
       user_message = prompt_for_message
@@ -76,7 +76,7 @@ class AssistantChat
 
       assistant.add_message_and_run content: user_message, auto_tool_execution: true
       assistant.save
-      puts assistant.messages.last.content + "\n"
+      Rails.logger.debug assistant.messages.last.content + "\n"
     end
   end
 end

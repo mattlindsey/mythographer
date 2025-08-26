@@ -7,8 +7,18 @@ class AssistantsController < ApplicationController
     @assistants = Assistant.all
   end
 
+  def show
+    @assistants = Assistant.all
+    @assistant = Assistant.find(params[:id])
+    @messages = @assistant.messages
+    @message = Message.new
+  end
+
   def new
     @assistant = Assistant.new
+  end
+
+  def edit
   end
 
   def create
@@ -18,16 +28,6 @@ class AssistantsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @assistants = Assistant.all
-    @assistant = Assistant.find(params[:id])
-    @messages = @assistant.messages
-    @message = Message.new
-  end
-
-  def edit
   end
 
   def update

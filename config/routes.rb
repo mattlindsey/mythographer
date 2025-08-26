@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :assistants do
     member do
-      post 'chat'
+      post "chat"
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

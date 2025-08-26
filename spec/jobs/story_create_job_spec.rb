@@ -100,7 +100,7 @@ RSpec.describe StoryCreateJob do
         allow(Story).to receive(:find).and_return(google_story)
         # Mock the Google Palm LLM class
         google_llm_class = double("GooglePalmClass")
-        google_llm = instance_double("GooglePalmInstance")
+        google_llm = instance_double(GooglePalmInstance)
         allow(google_llm_class).to receive(:new).and_return(google_llm)
         allow(google_llm).to receive(:complete).and_return(llm_response)
 

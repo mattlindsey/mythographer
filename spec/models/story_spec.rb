@@ -5,7 +5,7 @@ RSpec.describe Story do
 
   before do
     # Mock the vectorsearch functionality to avoid API calls
-    allow_any_instance_of(Story).to receive(:upsert_to_vectorsearch)
+    allow_any_instance_of(described_class).to receive(:upsert_to_vectorsearch)
   end
 
   it "is valid" do
