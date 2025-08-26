@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_02_215420) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_14_122349) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "vector"
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +53,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_02_215420) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "assistants", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "instructions"
+    t.string "tool_choice"
+    t.json "tools", default: []
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "gods", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -61,6 +71,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_02_215420) do
     t.datetime "updated_at", null: false
     t.index ["mythology_id"], name: "index_gods_on_mythology_id"
     t.index ["pantheon_id"], name: "index_gods_on_pantheon_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "assistant_id"
+    t.string "role", null: false
+    t.text "content"
+    t.json "tool_calls", default: []
+    t.string "tool_call_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assistant_id"], name: "index_messages_on_assistant_id"
   end
 
   create_table "mythologies", force: :cascade do |t|
@@ -86,6 +107,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_02_215420) do
     t.string "creativity"
     t.string "llm_name"
     t.string "instructions"
+    t.vector "embedding", limit: 1536
     t.index ["mythology_id"], name: "index_stories_on_mythology_id"
   end
 
@@ -104,6 +126,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_02_215420) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "gods", "mythologies"
   add_foreign_key "gods", "pantheons"
+  add_foreign_key "messages", "assistants"
   add_foreign_key "stories", "mythologies"
   add_foreign_key "story_gods", "gods"
   add_foreign_key "story_gods", "stories"

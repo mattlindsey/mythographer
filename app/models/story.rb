@@ -1,4 +1,15 @@
 class Story < ApplicationRecord
+  vectorsearch
+
+  after_update -> {
+    begin
+      broadcast_replace_to "stories"
+    rescue => e
+      logger.error "Error occurred during broadcast_replace_to: #{e.message}"
+    end
+  }
+  after_save :upsert_to_vectorsearch
+
   belongs_to :mythology
 
   validates :title, presence: true
@@ -21,12 +32,4 @@ class Story < ApplicationRecord
   def creativity_temp
     CREATIVITY_TEMPS[creativity]
   end
-
-  after_update -> {
-    begin
-      broadcast_replace_to "stories"
-    rescue => e
-      logger.error "Error occurred during broadcast_replace_to: #{e.message}"
-    end
-  }
 end

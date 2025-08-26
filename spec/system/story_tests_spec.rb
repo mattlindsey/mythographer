@@ -1,6 +1,11 @@
 require "rails_helper"
 
 RSpec.describe "StorySystemTests" do
+  before do
+    # Mock the vectorsearch functionality to avoid API calls
+    allow_any_instance_of(Story).to receive(:upsert_to_vectorsearch)
+  end
+
   it "gives error message on empty title and url" do
     visit new_story_path
     click_link_or_button "Generate Story"

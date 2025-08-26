@@ -83,7 +83,11 @@ end
 
 # Additional gems beyond default for rails 7
 gem "tailwindcss-rails", "~> 2.0"
-gem "langchainrb"
 gem "ruby-openai", "~> 6.1.0"
 gem "rack-timeout"
 gem "google_palm_api"
+gem "langchainrb_rails"
+#  git: "/Users/mattlindsey/github/langchainrb_rails",
+#  branch: "pr112"
+gem "neighbor"
+gem "wikipedia-client"
