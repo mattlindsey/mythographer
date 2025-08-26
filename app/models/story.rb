@@ -1,4 +1,8 @@
 class Story < ApplicationRecord
+  vectorsearch
+
+  after_save :upsert_to_vectorsearch
+
   belongs_to :mythology
 
   validates :title, presence: true

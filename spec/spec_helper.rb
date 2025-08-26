@@ -1,5 +1,6 @@
 require "simplecov"
 require "simplecov_small_badge"
+
 SimpleCov.start "rails" do
   # add your normal SimpleCov configs
   # add_filter "/app/model"

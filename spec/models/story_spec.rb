@@ -3,6 +3,11 @@ require "rails_helper"
 RSpec.describe Story do
   let(:story) { create(:story) }
 
+  before do
+    # Mock the vectorsearch functionality to avoid API calls
+    allow_any_instance_of(Story).to receive(:upsert_to_vectorsearch)
+  end
+
   it "is valid" do
     expect(story).to be_valid
   end
